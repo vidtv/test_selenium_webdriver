@@ -12,7 +12,6 @@ public class KinoPage {
     }
 
     private By inCinemaButton = By.xpath("html/body/div[3]/div[4]/div[3]/div/div[1]/div/div/div[2]/div[3]/div/span");
-    //private By dateList = By.xpath("/html/body/div[3]/div[4]/div[3]/div/div[5]/div/form/div[1]/div[1]/div/div[1]/div[1]");
     private By dateList = By.xpath("//div[@class='dropdown dropdown_scrollable js-dates']");
     private By tomorrowChoose = By.xpath("//input[@data-title='Завтра']/parent::label");
     private By metrostationSearch = By.xpath("//input[@placeholder='Станции метро']");
