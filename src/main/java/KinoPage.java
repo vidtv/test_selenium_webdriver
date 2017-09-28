@@ -11,16 +11,16 @@ public class KinoPage {
         this.driver = driver;
     }
 
-    private By inCinemaButton = By.xpath("html/body/div[3]/div[4]/div[3]/div/div[1]/div/div/div[2]/div[3]/div/span");
-    private By dateList = By.xpath("//div[@class='dropdown dropdown_scrollable js-dates']");
+    private By inCinemaButton = By.xpath("//span[@name='clb6796617']");
+    private By dateList = By.xpath("//div[@class='dropdown__text js-dates__title' and text()='Сегодня']");
     private By tomorrowChoose = By.xpath("//input[@data-title='Завтра']/parent::label");
     private By metrostationSearch = By.xpath("//input[@placeholder='Станции метро']");
     private By metrostationKurskaya = By.xpath("//div[@data-id='68']");
-    private By genreList = By.xpath("//div[@class='dropdown dropdown_scrollable dropdown_scrollable js-module']");
+    private By genreList = By.xpath("//div[@class='dropdown dropdown_scrollable dropdown_scrollable js-module' and @data-module='Dropdown.Multiselect']");
     private By drama = By.xpath("//div[@class='checkbox checkbox_block checkbox_colored checkbox_small suggest__item js-multiselect__control'][2]");
     private By comedy = By.xpath("//div[@class='checkbox checkbox_block checkbox_colored checkbox_small suggest__item js-multiselect__control'][3]");
-    private By seances2D = By.xpath("/html/body/div[3]/div[4]/div[3]/div/div[5]/div/form/div[2]/span[1]/div/div[1]");
-    private By chooseButton = By.xpath("/html/body/div[3]/div[4]/div[3]/div/div[5]/div/form/div[1]/div[5]");
+    private By seances2D = By.xpath("//input[@name='is_2d']/parent::label");
+    private By chooseButton = By.xpath("//button[@name='clb6796813']");
 
     public void inCinemaButtonClick() {
         driver.findElement(inCinemaButton).click();
