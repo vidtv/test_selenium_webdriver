@@ -38,7 +38,7 @@ public class KinoPage {
         driver.findElement(metrostationSearch).sendKeys(metroStation);
     }
 
-    public void metrostationKurskayaChoose() {
+    public void metrostationChoose() {
         driver.findElement(metrostationKurskaya).click();
     }
 
@@ -58,7 +58,22 @@ public class KinoPage {
         driver.findElement(seances2D).click();
     }
 
-    public void chooseButtonClick() {
+    public ResultPage chooseButtonClick() {
         driver.findElement(chooseButton).click();
+        return new ResultPage(driver);
+    }
+
+    public ResultPage getSeancesList() {
+        this.inCinemaButtonClick();
+        this.dateListClick();
+        this.tomorrowChooseClick();
+        this.metrostationSearchInput("Курская");
+        this.metrostationChoose();
+        this.genreListClick();
+        this.dramaChoose();
+        this.comedyChoose();
+        this.seances2DClick();
+        this.chooseButtonClick();
+        return new ResultPage(driver);
     }
 }
