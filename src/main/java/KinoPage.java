@@ -22,40 +22,49 @@ public class KinoPage {
     private By seances2D = By.xpath("//input[@name='is_2d']/parent::label");
     private By chooseButton = By.xpath("//button[@name='clb6796813']");
 
-    public void inCinemaButtonClick() {
+    public KinoPage inCinemaButtonClick() {
         driver.findElement(inCinemaButton).click();
+        return this;
     }
 
-    public void dateListClick() {
+    public KinoPage dateListClick() {
         driver.findElement(dateList).click();
+        return this;
     }
 
-    public void tomorrowChooseClick() {
+    public KinoPage tomorrowChooseClick() {
         driver.findElement(tomorrowChoose).click();
+        return this;
     }
 
-    public void metrostationSearchInput(String metroStation) {
+    public KinoPage metrostationSearchInput(String metroStation) {
         driver.findElement(metrostationSearch).sendKeys(metroStation);
+        return this;
     }
 
-    public void metrostationChoose() {
+    public KinoPage metrostationChoose() {
         driver.findElement(metrostationKurskaya).click();
+        return this;
     }
 
-    public void genreListClick() {
+    public KinoPage genreListClick() {
         driver.findElement(genreList).click();
+        return this;
     }
 
-    public void dramaChoose() {
+    public KinoPage dramaChoose() {
         driver.findElement(drama).click();
+        return this;
     }
 
-    public void comedyChoose() {
+    public KinoPage comedyChoose() {
         driver.findElement(comedy).click();
+        return this;
     }
 
-    public void seances2DClick() {
+    public KinoPage seances2DClick() {
         driver.findElement(seances2D).click();
+        return this;
     }
 
     public ResultPage chooseButtonClick() {
