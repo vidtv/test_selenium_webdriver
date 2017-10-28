@@ -1,9 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-/**
- * Created by Никита on 22.09.2017.
- */
 public class KinoPage {
     private static WebDriver driver;
 
@@ -11,64 +10,83 @@ public class KinoPage {
         this.driver = driver;
     }
 
-    private By inCinemaButton = By.xpath("//span[@name='clb6796617']");
-    private By dateList = By.xpath("//div[@class='dropdown__text js-dates__title' and text()='Сегодня']");
-    private By tomorrowChoose = By.xpath("//input[@data-title='Завтра']/parent::label");
-    private By metrostationSearch = By.xpath("//input[@placeholder='Станции метро']");
-    private By metrostationKurskaya = By.xpath("//div[@data-id='68']");
-    private By genreList = By.xpath("//div[@class='dropdown dropdown_scrollable dropdown_scrollable js-module' and @data-module='Dropdown.Multiselect']");
-    private By drama = By.xpath("//div[@class='checkbox checkbox_block checkbox_colored checkbox_small suggest__item js-multiselect__control'][2]");
-    private By comedy = By.xpath("//div[@class='checkbox checkbox_block checkbox_colored checkbox_small suggest__item js-multiselect__control'][3]");
-    private By seances2D = By.xpath("//input[@name='is_2d']/parent::label");
-    private By chooseButton = By.xpath("//button[@name='clb6796813']");
+    @FindBy(xpath = "//span[@name='clb6796617']")
+    private WebElement inCinemaButton;
+
+    @FindBy(xpath = "//div[@class='dropdown__text js-dates__title' and text()='Сегодня']")
+    private WebElement dateList;
+
+    @FindBy(xpath = "//input[@data-title='Завтра']/parent::label")
+    private WebElement tomorrowChoose;
+
+    @FindBy(xpath = "//input[@placeholder='Станции метро']")
+    private WebElement metrostationSearch;
+
+    @FindBy(xpath = "//div[@data-id='68']")
+    private WebElement metrostationKurskaya;
+
+    @FindBy(xpath = "//div[@class='dropdown dropdown_scrollable dropdown_scrollable js-module' and @data-module='Dropdown.Multiselect']")
+    private WebElement genreList;
+
+    @FindBy(xpath = "//div[@class='checkbox checkbox_block checkbox_colored checkbox_small suggest__item js-multiselect__control'][2]")
+    private WebElement drama;
+
+    @FindBy(xpath = "//div[@class='checkbox checkbox_block checkbox_colored checkbox_small suggest__item js-multiselect__control'][3]")
+    private WebElement comedy;
+
+    @FindBy(xpath = "//input[@name='is_2d']/parent::label")
+    private WebElement seances2D;
+
+    @FindBy(xpath = "//button[@name='clb6796813']")
+    private WebElement chooseButton;
 
     public KinoPage inCinemaButtonClick() {
-        driver.findElement(inCinemaButton).click();
+        inCinemaButton.click();
         return this;
     }
 
     public KinoPage dateListClick() {
-        driver.findElement(dateList).click();
+        dateList.click();
         return this;
     }
 
     public KinoPage tomorrowChooseClick() {
-        driver.findElement(tomorrowChoose).click();
+        tomorrowChoose.click();
         return this;
     }
 
     public KinoPage metrostationSearchInput(String metroStation) {
-        driver.findElement(metrostationSearch).sendKeys(metroStation);
+        metrostationSearch.sendKeys(metroStation);
         return this;
     }
 
     public KinoPage metrostationChoose() {
-        driver.findElement(metrostationKurskaya).click();
+        metrostationKurskaya.click();
         return this;
     }
 
     public KinoPage genreListClick() {
-        driver.findElement(genreList).click();
+        genreList.click();
         return this;
     }
 
     public KinoPage dramaChoose() {
-        driver.findElement(drama).click();
+        drama.click();
         return this;
     }
 
     public KinoPage comedyChoose() {
-        driver.findElement(comedy).click();
+        comedy.click();
         return this;
     }
 
     public KinoPage seances2DClick() {
-        driver.findElement(seances2D).click();
+        seances2D.click();
         return this;
     }
 
     public ResultPage chooseButtonClick() {
-        driver.findElement(chooseButton).click();
+        chooseButton.click();
         return new ResultPage(driver);
     }
 
