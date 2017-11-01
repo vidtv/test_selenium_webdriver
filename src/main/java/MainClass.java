@@ -21,7 +21,7 @@ public class MainClass {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
         driver.get("https://afisha.mail.ru");
-        
+
         KinoPage kinoPage = PageFactory.initElements(driver, KinoPage.class);
 
         kinoPage.getSeancesList();
