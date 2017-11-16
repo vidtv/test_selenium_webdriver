@@ -25,5 +25,7 @@ public class MainClass {
         KinoPage kinoPage = PageFactory.initElements(driver, KinoPage.class);
 
         kinoPage.getSeancesList();
+
+        ResultPage resultPage = PageFactory.initElements(driver, ResultPage.class);
     }
 }
