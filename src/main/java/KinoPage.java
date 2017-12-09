@@ -25,13 +25,14 @@ public class KinoPage {
     @FindBy(xpath = "//div[@data-id='68']")
     private WebElement metrostationKurskaya;
 
-    @FindBy(xpath = "//div[@class='dropdown dropdown_scrollable dropdown_scrollable js-module' and @data-module='Dropdown.Multiselect']")
+    @FindBy(xpath = "/html/body/div[3]/div[4]/div[3]/div/div[5]/div/form/div[1]/div[3]")
+    //@FindBy(xpath = "//div[@class=\'input-group input-group_fixed\']/div[2]")
     private WebElement genreList;
 
-    @FindBy(xpath = "//div[@class='checkbox checkbox_block checkbox_colored checkbox_small suggest__item js-multiselect__control'][2]")
+    @FindBy(xpath = "//span[@class='checkbox__text' and text()='драма']")
     private WebElement drama;
 
-    @FindBy(xpath = "//div[@class='checkbox checkbox_block checkbox_colored checkbox_small suggest__item js-multiselect__control'][3]")
+    @FindBy(xpath = "//span[@class='checkbox__text' and text()='комедия']")
     private WebElement comedy;
 
     @FindBy(xpath = "//input[@name='is_2d']/parent::label")

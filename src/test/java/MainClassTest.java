@@ -24,7 +24,7 @@ public class MainClassTest {
         kinoPage = new KinoPage(driver);
     }
 
-    @Test
+    /*@Test
     public void method1() {
 
     }
@@ -37,5 +37,5 @@ public class MainClassTest {
     @AfterClass
     public void afterClassMethod() {
 
-    }
+    } */
 }
