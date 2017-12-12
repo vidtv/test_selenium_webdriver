@@ -1,6 +1,5 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class KinoPage {
     private static WebDriver driver;
@@ -9,84 +8,64 @@ public class KinoPage {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "//span[@name='clb6796617']")
-    private WebElement inCinemaButton;
-
-    @FindBy(xpath = "//div[@class='dropdown__text js-dates__title' and text()='Сегодня']")
-    private WebElement dateList;
-
-    @FindBy(xpath = "//input[@data-title='Завтра']/parent::label")
-    private WebElement tomorrowChoose;
-
-    @FindBy(xpath = "//input[@placeholder='Станции метро']")
-    private WebElement metrostationSearch;
-
-    @FindBy(xpath = "//div[@data-id='68']")
-    private WebElement metrostationKurskaya;
-
-    @FindBy(xpath = "/html/body/div[3]/div[4]/div[3]/div/div[5]/div/form/div[1]/div[3]")
-    //@FindBy(xpath = "//div[@class=\'input-group input-group_fixed\']/div[2]")
-    private WebElement genreList;
-
-    @FindBy(xpath = "//span[@class='checkbox__text' and text()='драма']")
-    private WebElement drama;
-
-    @FindBy(xpath = "//span[@class='checkbox__text' and text()='комедия']")
-    private WebElement comedy;
-
-    @FindBy(xpath = "//input[@name='is_2d']/parent::label")
-    private WebElement seances2D;
-
-    @FindBy(xpath = "//button[@name='clb6796813']")
-    private WebElement chooseButton;
+    private By inCinemaButton = By.xpath("//span[@name='clb6796617']");
+    private By dateList = By.xpath("//div[@class='dropdown__text js-dates__title' and text()='Сегодня']");
+    private By tomorrowChoose = By.xpath("//input[@data-title='Завтра']/parent::label");
+    private By metrostationSearch = By.xpath("//input[@placeholder='Станции метро']");
+    private By metrostationKurskaya = By.xpath("//div[@data-id='68']");
+    private By genreList = By.xpath("//div[@class='tab__content js-tab__content tab__content_active']//input[@placeholder='Все жанры']");
+    private By drama = By.xpath("//span[@class='checkbox__text' and text()='драма']");
+    private By comedy = By.xpath("//span[@class='checkbox__text' and text()='комедия']");
+    private By seances2D = By.xpath("//input[@name='is_2d']/parent::label");
+    private By chooseButton = By.xpath("//button[@name='clb6796813']");
 
     public KinoPage inCinemaButtonClick() {
-        inCinemaButton.click();
+        driver.findElement(inCinemaButton).click();
         return this;
     }
 
     public KinoPage dateListClick() {
-        dateList.click();
+        driver.findElement(dateList).click();
         return this;
     }
 
     public KinoPage tomorrowChooseClick() {
-        tomorrowChoose.click();
+        driver.findElement(tomorrowChoose).click();
         return this;
     }
 
     public KinoPage metrostationSearchInput(String metroStation) {
-        metrostationSearch.sendKeys(metroStation);
+        driver.findElement(metrostationSearch).sendKeys(metroStation);
         return this;
     }
 
     public KinoPage metrostationChoose() {
-        metrostationKurskaya.click();
+        driver.findElement(metrostationKurskaya).click();
         return this;
     }
 
     public KinoPage genreListClick() {
-        genreList.click();
+        driver.findElement(genreList).click();
         return this;
     }
 
     public KinoPage dramaChoose() {
-        drama.click();
+        driver.findElement(drama).click();
         return this;
     }
 
     public KinoPage comedyChoose() {
-        comedy.click();
+        driver.findElement(comedy).click();
         return this;
     }
 
     public KinoPage seances2DClick() {
-        seances2D.click();
+        driver.findElement(seances2D).click();
         return this;
     }
 
     public ResultPage chooseButtonClick() {
-        chooseButton.click();
+        driver.findElement(chooseButton).click();
         return new ResultPage(driver);
     }
 
